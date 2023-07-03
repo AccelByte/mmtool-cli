@@ -57,14 +57,39 @@ mmtoolcli -h
 Flags:
   -c, --config string   config file (default is $HOME/mmtoolconfig.yaml)
 ```
-An example config file can be found in this repo at `exampleconfig.yaml`
+Below is an example config which you can fill in your own values. 
 
-This config file is meant to drive the configurations that are consistently needed throughout the tool and provide
+```
+#application
+polltime: 3
+canceltime: 60
+
+#accelbyte sdk vars
+abclientid:
+abclientsecret:
+abbaseurl: <https://your-env.accelbyte.io>
+
+#user creation params
+userprefix: userPrefix #this will end up looking like userPrefix<generatedUUID> -- userPrefix203948230hasf8
+useremaildomain: somedomain.com #no @ required
+userdob: "1985-01-12" #DoB must be over 21 years of age
+userpassword:
+usercountry: US
+
+statcodes:
+  - name: mmr
+    minvalue: 40
+    maxvalue: 60
+```
+
+This config file is meant to drive the functionality that is consistently needed throughout the tool and provide
 easier repeatability and organization, as well as store environment variables.
 
 ### Example Usages
 
 #### _Generate Solo User Tickets_
+If you wish to create Match Tickets that have only 1 User on them, the `solo` command is what you'll want to use. Below are examples of ways to use this command.
+
 REQUIRED FLAGS:
 ```text
   -m, --matchpool string   The MatchPool you want to run MatchMaking V2 on: REQUIRED
@@ -79,6 +104,7 @@ _**From File:**_
 `mmtool-cli tickets create solo -n <name of namespace> -m <matchpool name> -f <./path/to/users/file.yaml>`
 
 #### _Generate Party User Tickets_
+If you wish to create Match Tickets in which Users are considered in a Party, the `party` command is what you'll want to use. Below are examples of ways to use this command.
 
 REQUIRED FLAGS:
 
@@ -99,7 +125,7 @@ REQUIRED FLAGS:
 
 
 #### _Create Users And Write to a File_
-
+If you do not have pre-made users, you can use this command to create users and write them to a file to be read from.
 ```
   -f, --filename string    The name of the file that will be created, or overriden: REQUIRED
   -n, --namespace string   The Namespace where your MatchPool is located: REQUIRED
