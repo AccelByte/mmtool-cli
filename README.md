@@ -85,6 +85,21 @@ statcodes:
 This config file is meant to drive the functionality that is consistently needed throughout the tool and provide
 easier repeatability and organization, as well as store environment variables.
 
+#### _MatchTicketAttributes_
+
+You can add MatchTicketAttributes by using a JSON file from the command line. An example of this would look like:
+
+```
+{
+  "LOCALE": "us-NA",
+  "VERSION": "0.2.3.hello.world"
+}
+```
+
+An example of the command to load these attributes would look like:
+
+`mmtool-cli tickets create solo -n <name of namespace> -m <matchpool name> -u 2 -a <./path/to/attributes/file.json>`
+
 ### Example Usages
 
 #### _Generate Solo User Tickets_
