@@ -108,10 +108,7 @@ If you wish to create Match Tickets that have only 1 User on them, the `solo` co
 REQUIRED FLAGS:
 ```
   -m, --matchpool string   The MatchPool you want to run MatchMaking V2 on: REQUIRED
-  -n, --namespace string   The Namespace where your MatchPool is located: REQUIRED
-  --deleteusers bool         Should the the Users used be deleted? Default TRUE
-  --leavesession bool        Should users leave the sessions they joined? Default TRUE
-  --deletetickets bool       Should the match tickets created be deleted? Default TRUE
+  -n, --namespace string   The Namespace where your MatchPool is located: REQUIRE
 ```
 
 OPTIONAL FLAGS:
