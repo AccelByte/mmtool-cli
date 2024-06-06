@@ -118,6 +118,9 @@ OPTIONAL FLAGS:
 ```
   -f, --file string              Load users from a yaml file
   -a, --ticketattributes string  Load match ticket attributes from a JSON file
+  --deleteusers bool         Should the the Users used be deleted? Default TRUE
+  --leavesession bool        Should users leave the sessions they joined? Default TRUE
+  --deletetickets bool       Should the match tickets created be deleted? Default TRUE
 ```
 **_New Users:_**
 
