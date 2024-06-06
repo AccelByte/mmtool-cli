@@ -106,9 +106,18 @@ An example of the command to load these attributes would look like:
 If you wish to create Match Tickets that have only 1 User on them, the `solo` command is what you'll want to use. Below are examples of ways to use this command.
 
 REQUIRED FLAGS:
-```text
+```
   -m, --matchpool string   The MatchPool you want to run MatchMaking V2 on: REQUIRED
-  -n, --namespace string   The Namespace where your MatchPool is located: REQUIRED
+  -n, --namespace string   The Namespace where your MatchPool is located: REQUIRE
+```
+
+OPTIONAL FLAGS:
+```
+  -f, --file string              Load users from a yaml file
+  -a, --ticketattributes string  Load match ticket attributes from a JSON file
+  --deleteusers bool         Should the the Users used be deleted? Default TRUE
+  --leavesession bool        Should users leave the sessions they joined? Default TRUE
+  --deletetickets bool       Should the match tickets created be deleted? Default TRUE
 ```
 **_New Users:_**
 
@@ -124,10 +133,21 @@ If you wish to create Match Tickets in which Users are considered in a Party, th
 REQUIRED FLAGS:
 
 ```
+  -f, --file string              Load users from a yaml file
+  -a, --ticketattributes string  Load match ticket attributes from a JSON file
   -m, --matchpool string         The MatchPool you want to run MatchMaking V2 on: REQUIRED
   -n, --namespace string         The Namespace where your MatchPool is located: REQUIRED
   -p, --partysize int            Amount of Users you want to create: REQUIRED
   -s, --sessiontemplate string   The Session Template used for creating a Party: REQUIRED
+```
+
+OPTIONAL FLAGS:
+
+```
+  --deleteusers bool         Should the the Users used be deleted? Default TRUE
+  --leavesession bool        Should users leave the sessions they joined? Default TRUE
+  --deletetickets bool       Should the match tickets created be deleted? Default TRUE
+  --gamesession bool         Should the match tickets created using game session instead of party session? Default FALSE
 ```
 
 **_New Users_**
